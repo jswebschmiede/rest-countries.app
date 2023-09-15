@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --cl-text: 200deg 15% 8%;
+        --cl-elements: 0deg 0% 100%;
+        --cl-background: 0deg 0% 98%;
+        --cl-inputs: 0deg 0% 52%;
+
+        /* dark mode */
+        --cl-text-dm: 0deg 0% 100%;
+        --cl-elements-dm: 209deg 23% 22%;
+        --cl-background-dm: 207deg 26% 17%;
+        --cl-inputs-dm: 0deg 0% 100%;
+    }
+}
