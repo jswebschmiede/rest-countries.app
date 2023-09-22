@@ -6,9 +6,14 @@ import Header from './components/Ui/Header';
 import Search from './components/Ui/Search';
 import Filter from './components/Ui/Filter';
 import CountryList from './components/Ui/CountryList';
+import { Region } from './types/Region';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [selectedRegion, setSelectedRegion] = useState<Region>({
+        id: 0,
+        name: '',
+    });
 
     return (
         <main className='font-sans font-light text-fonts bg-background min-h-screen w-full dark:text-fonts-dm dark:bg-background-dm'>
@@ -19,10 +24,16 @@ const App: React.FC = () => {
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
                     />
-                    <Filter />
+                    <Filter
+                        selectedRegion={selectedRegion}
+                        setSelectedRegion={setSelectedRegion}
+                    />
                 </div>
 
-                <CountryList searchQuery={searchQuery} />
+                <CountryList
+                    searchQuery={searchQuery}
+                    selectedRegion={selectedRegion}
+                />
             </section>
         </main>
     );
