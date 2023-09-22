@@ -1,27 +1,15 @@
-import { ChangeEvent, useState } from 'react';
+import { type ChangeEvent } from 'react';
 import { IoSearchSharp } from 'react-icons/io5';
 import { filterHtml } from '../../lib/utils';
-import { Country } from '../../hooks/useFetchCountrys';
 
-interface SearchProps {}
+interface SearchProps {
+    searchQuery: string;
+    setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+}
 
-const Search: React.FC<SearchProps> = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-    const [countrys, setCountrys] = useState<Country[]>([]);
-
-    console.log(countrys);
-
+const Search: React.FC<SearchProps> = ({ searchQuery, setSearchQuery }) => {
     const handleSearchChange = async (event: ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(filterHtml(event.target.value));
-
-        try {
-            const response = await fetch(`https://restcountries.com/v3.1/name/${searchQuery}`);
-            const countrys = await response.json();
-
-            setCountrys(countrys);
-        } catch (error) {
-            console.log(error);
-        }
     };
 
     return (
