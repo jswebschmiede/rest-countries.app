@@ -1,12 +1,11 @@
+import { useState } from 'react';
 import '@fontsource/nunito-sans/300.css';
 import '@fontsource/nunito-sans/600.css';
 import '@fontsource/nunito-sans/800.css';
 import Header from './components/Ui/Header';
 import Search from './components/Ui/Search';
 import Filter from './components/Ui/Filter';
-
 import CountryList from './components/Ui/CountryList';
-import { useState } from 'react';
 
 const App: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
