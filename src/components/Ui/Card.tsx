@@ -1,4 +1,4 @@
-import { Country } from '../../lib/useFetchCountrys';
+import { Country } from '../../hooks/useFetchCountrys';
 
 const Card: React.FC<Country> = ({ name, capital, flags, population, region }) => {
     return (

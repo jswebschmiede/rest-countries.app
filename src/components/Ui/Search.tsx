@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { IoSearchSharp } from 'react-icons/io5';
 import { filterHtml } from '../../lib/utils';
-import { Country } from '../../lib/useFetchCountrys';
+import { Country } from '../../hooks/useFetchCountrys';
 
 interface SearchProps {}
 

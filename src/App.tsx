@@ -5,7 +5,7 @@ import Header from './components/Ui/Header';
 import Search from './components/Ui/Search';
 import Filter from './components/Ui/Filter';
 import Card from './components/Ui/Card';
-import { useFetchCountrys } from './lib/useFetchCountrys';
+import { useFetchCountrys } from './hooks/useFetchCountrys';
 
 const App: React.FC = () => {
     const { countrys, loading, error } = useFetchCountrys('https://restcountries.com/v3.1/all');
