@@ -1,12 +1,13 @@
 import useDebounce from '../../hooks/useDepounce';
 import { Country } from '../../types/Country';
 import { Error } from '../../types/Error';
+import { Region } from '../../types/Region';
 import Card from './Card';
 import { useEffect, useState } from 'react';
 
 interface CountryListProps {
     searchQuery: string;
-    selectedRegion: string;
+    selectedRegion: Region;
 }
 
 const CountryList: React.FC<CountryListProps> = ({ searchQuery, selectedRegion }) => {
